@@ -1,4 +1,4 @@
-const computeGrayContrast = (dark, light) => (hex) => {
+export const computeGrayContrast = (dark, light) => (hex) => {
     const RBG_THRESHOLD = 127
     if (hex.indexOf('#') === 0) {
         hex = hex.slice(1);
@@ -17,8 +17,4 @@ const computeGrayContrast = (dark, light) => (hex) => {
     const average = [r, g, b].reduce((a, b) => a + b) / 3
     console.log({ average })
     return average > RBG_THRESHOLD ? dark : light
-}
-
-module.exports = {
-    computeGrayContrast
 }
